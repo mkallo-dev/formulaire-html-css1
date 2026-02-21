@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="kallo.CSS">
+<link rel="stylesheet" href="kallo.css">
 <title>Document</title>
 </head>
 <body>
@@ -22,7 +22,7 @@
 <div>
 <label for="dateID">Date de naissance</label>
 <input type="date" name="name" id="dateID" required
-min="01-01-1900" max="31-12-2030" >
+min="1900-01-01" max="2030-12-30" >
 </div>
 <div>
 <label for="emailID">Adresse électronique</label>
@@ -145,8 +145,8 @@ margin-top: 15px;
 font-size: 15px;
 }
 input:focus,
-select :focus,
-textarea :focus{
+select: focus,
+textarea: focus{
 border-color: #5c8df6;
 box-shadow: 0 0 6px rgba(0, 0, 255, 0.4);
 }
