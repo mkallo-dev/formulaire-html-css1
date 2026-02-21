@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="kallo.CSS">
+<title>Document</title>
+</head>
+<body>
+<form action="destination.php" method="post">
+<fieldset>
+<legend>Informations personnelles</legend>
+<div class="two-columns">
+<div>
+<label for="nomID">Nom</label>
+<input type="text" name="nom" id="nomID" required minlength="2" maxlength="30" placeholder="Saisir votre nom">
+</div>
+<div>
+<label for="prenomID">Prénom</label>
+<input type="text" name="prenom" id="prenomID" required minlength="2" maxlength="30" placeholder="Saisir votre prénom">
+</div>
+<div>
+<label for="dateID">Date de naissance</label>
+<input type="date" name="name" id="dateID" required
+min="01-01-1900" max="31-12-2030" >
+</div>
+<div>
+<label for="emailID">Adresse électronique</label>
+<input type="email" name="adresse" id="adresseID" required placeholder="exemple@domaine.com">
+</div>
+<div>
+<label for="passID">Mot de passe</label>
+<input type="password" name="pass" id="passID" size="40" pattern="[A-Z]{2}[0-9]{4}[a-z]{2}" title="Le code doit contenir 2 lettres majuscules, 4 chiffres et 2 lettres minuscules" required 
+placeholder="Saisir votre mot de passe">
+</div>
+<div>
+Sexe
+<input type="radio" name="sexe" value="M" id="MID" checked>
+<label for="MID">Masculin</label>
+<input type="radio" name="sexe" value="F" id="FID">
+<label for="FID">Féminin</label>
+</div>
+<div>
+<label for="paysID">Pays</label>
+<select name="pays" id="paysID" required multiple size="1">
+<optgroup label="Afrique">
+<option value="maroc">Maroc</option>
+<option value="algérie">Algérie</option>
+<option value="tunisie">Tunisie</option>
+<option value="egypte">Egypte</option>
+</optgroup>
+<optgroup label="Europe">
+<option value="france">France</option>
+<option value="espagne">Espagne</option>
+<option value="italie">Italie</option>
+<option value="allemagne">Allemagne</option>
+</optgroup>
+<optgroup label="Autres">
+<option value="usa">USA</option>
+<option value="canada">Canada</option>
+<option value="chine">Chine</option>
+<option value="japon">Japon</option>
+</optgroup>
+</select>
+</div>
+</div>
+</fieldset><br><br>
+<fieldset>
+<legend>Centres d'intérêt et remarques</legend>
+<input type="checkbox" name="sport" id="sportID" value="sport">
+<label for="sportID">Sport</label><br>
+<input type="checkbox" name="musique" id="musiqueID" value="musique">
+<label for="musiqueID">Musique</label><br>
+<input type="checkbox" name="voyage" id="voyageID" value="voyage">
+<label for="voyageID">Voyage</label><br>
+<label for="CommentaireID">Commentaires:</label> <br>
+<textarea name="Commentaire" id="CommentaireID" placeholder="Ecrivez ici vos 
+commentaires..."
+cols="50" rows="5"></textarea>
+</fieldset><br><br>
+<fieldset>
+<legend>Fichiers et Validation</legend>
+<label for="fichierID">Télécharger un fichier</label>
+<input type="file" name="fichier" id="fichierID" accept=".jpg, .png, .pdf">
+<input type="hidden" name="identifiant" value="12345"><br><br>
+<div class="boutons">
+<input type="reset" value="Annuler">
+<input type="submit" value="Envoyer">
+</div>
+</fieldset>
+</form>
+</body>
+</html>
+Kallo.CSS
+body{
+font-family: 'Segoe UI', Arial, sans-serif;
+padding: 40px;
+margin: 0;
+background-image: linear-gradient(hsl(192, 17%, 94%), hsl(210, 45%, 91%));
+}
+form{
+width: 80%;
+margin: 0 auto;
+padding: 25px 35px;
+background-color: white;
+border-radius: 12px;
+box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+fieldset{
+border: 2px solid #3f51b5;
+border-radius: 10px;
+padding: 20px;
+margin: 10px;
+background-color: #ffffff;
+}
+legend{
+background-color: #3f51b5;
+color: #ffffff;
+border-radius: 5px;
+padding: 7px 15px;
+font-weight: bold;
+}
+.two-columns{
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+column-gap: 20px;
+align-items: center;
+}
+label{
+font-weight: 600;
+margin-top: 6px;
+color: #333333;
+}
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="date"],
+select,
+textarea{
+width: 100%;
+border: 1px solid #bbbbbb;
+border-radius: 8px;
+padding: 7px;
+margin-top: 15px;
+font-size: 15px;
+}
+input:focus,
+select :focus,
+textarea :focus{
+border-color: #5c8df6;
+box-shadow: 0 0 6px rgba(0, 0, 255, 0.4);
+}
+input[type=submit],
+input[type=reset]{
+border-radius: 8px;
+font-size: 16px;
+padding: 12px 25px;
+margin: 10px;
+border-style: none;
+color: white;
+}
+input[type=submit]{
+background-color: #4CAF50;
+}
+input[type=submit]:hover{
+background-color: #43a047;
+}
+input[type=reset]{
+background-color: #f44336;
+}
+input[type=reset]:hover{
+background-color: #d32f2f;
+}
+.boutons{
+display: flex;
+justify-content: flex-end;
+}
+input[type=file]{
+border: 1px solid #bbbbbb;
+border-radius: 8px;
+padding: 10px;
+background-color: #f8f9fc;
+font-size: 15px;
+}
+input[type=file]:hover{
+background-color: #eef1f7;
+border-color: #5c8df6;
+}
+select[multiple]{
+width: 100%;
+min-height: 50px;
+padding: 10px 12px;
+border: 2px solid #3f51b5;
+border-radius: 8px;
+background-color: #fdfdfd;
+font-size: 15px;
+}
